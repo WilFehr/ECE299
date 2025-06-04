@@ -4,7 +4,7 @@ I will be reading an analog voltage from a potentiometer and using that to adjus
 '''
 
 #imports
-from machine import Pin, PWM, ADC,
+from machine import Pin, PWM, ADC
 from time import sleep
 
 #global counter

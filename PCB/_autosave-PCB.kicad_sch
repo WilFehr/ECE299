@@ -2831,6 +2831,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "0"
+		(exclude_from_sim no)
+		(at 268.732 193.548 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c9e6b157-595d-4d64-9efb-5c5922cee1df")
+	)
+	(text "Watering hole clock radio"
+		(exclude_from_sim no)
+		(at 198.882 189.992 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ed8de070-d488-4413-82d7-2405221ffa93")
+	)
 	(junction
 		(at 50.8 85.09)
 		(diameter 0)

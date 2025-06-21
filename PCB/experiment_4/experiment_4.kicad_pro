@@ -119,7 +119,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.0,
+        "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -407,6 +407,7 @@
       "bus_entry_needed": "error",
       "bus_to_bus_conflict": "error",
       "bus_to_net_conflict": "error",
+      "conflicting_netclasses": "error",
       "different_unit_footprint": "error",
       "different_unit_net": "error",
       "duplicate_reference": "error",
@@ -438,7 +439,7 @@
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
       "similar_power": "warning",
-      "simulation_model_issue": "ignore",
+      "simulation_model_issue": "error",
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
@@ -452,7 +453,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "PCB.kicad_pro",
+    "filename": "experiment_4.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -612,7 +613,7 @@
   },
   "sheets": [
     [
-      "8b13b629-2587-4760-a406-cfaa0ffcd420",
+      "504a03b1-56bd-400e-8685-e6c9438c1c2f",
       "Root"
     ]
   ],

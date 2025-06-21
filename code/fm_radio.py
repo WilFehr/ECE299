@@ -1,8 +1,6 @@
 from machine import Pin, I2C
 import time
 
-
-
 class Radio:
     
     def __init__( self, NewFrequency, NewVolume, NewMute ):
@@ -172,42 +170,13 @@ class Radio:
 # initialize the FM radio
 #
 fm_radio = Radio( 101.9, 2, False )
-'''
-pressed = 0
-
-button = machine.Pin(0, machine.Pin.IN, machine.Pin.PULL_DOWN)
-
-def button1_handler(pin):
-    global pressed
-    global fm_radio
-    if pin == 1 and pressed == 0:
-        pressed = 1
-        #do stuff on raising edge
-        
-        Volume = (Volume + 1)%16
-         
-        if ( fm_radio.SetVolume( Volume ) == True ):
-             fm_radio.ProgramRadio()
-
-        
-        #delay as a debounce
-        utime.sleep(0.05)
-        
-    elif pin == 0 and pressed == 1:
-        #falling edge
-        pressed = 0
-    
-button.irq(trigger=machine.Pin.IRQ_RISING, handler= button1_handler)
-'''        
 
 while ( True ):
-    print( fm_radio.Volume )
-
 
 #
 # display the menu
 #
-   
+    
     print("")
     print( "ECE 299 FM Radio Demo Menu" );
     print("")
@@ -281,3 +250,11 @@ while ( True ):
 
     else:
         print( "Invalid menu option" )
+
+        
+
+
+
+    
+    
+  

@@ -1,4 +1,4 @@
-25630833146145544
+25636085564697385
 2pin_ScrewTerminal
 691137710002
 
@@ -102780,3 +102780,24 @@ Varistor VF
 0
 2
 2
+footprints
+SOIC_05WU-7_DIO
+
+AP63205WU-7 
+0
+6
+6
+footprints
+SOIC_05WU-7_DIO-L
+
+AP63205WU-7 
+0
+6
+6
+footprints
+SOIC_05WU-7_DIO-M
+
+AP63205WU-7 
+0
+6
+6

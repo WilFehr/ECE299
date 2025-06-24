@@ -1,4 +1,25 @@
-25623829932691582
+25630833146145544
+2pin_ScrewTerminal
+691137710002
+
+
+0
+2
+2
+5pin_ScrewTerminal
+PHOENIX_1935190
+
+
+0
+5
+5
+7pin_ScrewTerminal
+1727065
+
+
+0
+7
+7
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -67976,6 +67997,13 @@ Yellow 5381 Series LED
 0
 2
 2
+LM386N_4_NOPB
+DIP794W45P254L959H508Q8
+
+
+0
+8
+8
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet

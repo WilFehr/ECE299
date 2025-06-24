@@ -6056,7 +6056,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
 			(at 168.91 51.1048 0)
 			(effects
 				(font
@@ -7271,7 +7271,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 71.12 31.75 0)
 			(effects
 				(font
@@ -7956,7 +7956,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LM386N_4_NOPB:DIP794W45P254L959H508Q8"
+		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
 			(at 160.9852 66.04 0)
 			(effects
 				(font
@@ -8755,7 +8755,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
 			(at 146.05 40.9448 0)
 			(effects
 				(font

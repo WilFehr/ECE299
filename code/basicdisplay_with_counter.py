@@ -13,11 +13,11 @@ SCREEN_HEIGHT = 64 #number of rows
 
 # Initialize I/O pins associated with the oled display SPI interface
 
-spi_sck = Pin(18) # sck stands for serial clock; always be connected to SPI SCK pin of the Pico
-spi_sda = Pin(19) # sda stands for serial data;  always be connected to SPI TX pin of the Pico; this is the MOSI
-spi_res = Pin(21) # res stands for reset; to be connected to a free GPIO pin
-spi_dc  = Pin(20) # dc stands for data/command; to be connected to a free GPIO pin
-spi_cs  = Pin(17) # chip select; to be connected to the SPI chip select of the Pico 
+spi_sck = Pin(6) # sck stands for serial clock; always be connected to SPI SCK pin of the Pico
+spi_sda = Pin(3) # sda stands for serial data;  always be connected to SPI TX pin of the Pico; this is the MOSI
+spi_res = Pin(7) # res stands for reset; to be connected to a free GPIO pin
+spi_dc  = Pin(4) # dc stands for data/command; to be connected to a free GPIO pin
+spi_cs  = Pin(5) # chip select; to be connected to the SPI chip select of the Pico
 
 #
 # SPI Device ID can be 0 or 1. It must match the wiring. 

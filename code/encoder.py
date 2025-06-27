@@ -145,7 +145,7 @@ EncoderA = Pin( 1, Pin.IN )
 # GPIO 2 ( Pin 4 ) is connected to terminal B on the encoder
 #
 
-EncoderB = Pin( 2, Pin.IN )
+EncoderB = Pin( 0, Pin.IN )
 
 #
 # Enable interrupt detection for both rising and falling edges of both signals
@@ -159,11 +159,11 @@ EncoderB.irq( handler= EncoderBInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISI
 
 # Initialize I/O pins associated with the oled display SPI interface
 
-spi_sck = Pin(18) # sck stands for serial clock; always be connected to SPI SCK pin of the Pico
-spi_sda = Pin(19) # sda stands for serial data;  always be connected to SPI TX pin of the Pico; this is the MOSI
-spi_res = Pin(21) # res stands for reset; to be connected to a free GPIO pin
-spi_dc  = Pin(20) # dc stands for data/command; to be connected to a free GPIO pin
-spi_cs  = Pin(17) # chip select; to be connected to the SPI chip select of the Pico 
+spi_sck = Pin(6) # sck stands for serial clock; always be connected to SPI SCK pin of the Pico
+spi_sda = Pin(7) # sda stands for serial data;  always be connected to SPI TX pin of the Pico; this is the MOSI
+spi_res = Pin(10) # res stands for reset; to be connected to a free GPIO pin
+spi_dc  = Pin(8) # dc stands for data/command; to be connected to a free GPIO pin
+spi_cs  = Pin(9) # chip select; to be connected to the SPI chip select of the Pico 
 
 #
 # SPI Device ID can be 0 or 1. It must match the wiring. 

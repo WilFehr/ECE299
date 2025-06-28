@@ -7,7 +7,7 @@
 	(title_block
 		(title "Watering Hole Clock Radio")
 		(date "2025-06-24")
-		(rev "1")
+		(rev "2")
 		(company "Wil Fehr & Aodhan Tonnesen")
 	)
 	(lib_symbols
@@ -5750,7 +5750,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D6.3mm_H11.0mm_P2.50mm"
 			(at 190.5 51.1048 0)
 			(effects
 				(font
@@ -8075,7 +8075,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D6.3mm_H11.0mm_P2.50mm"
 			(at 156.21 56.1848 0)
 			(effects
 				(font
@@ -8647,7 +8647,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:C_Radial_D5.0mm_H11.0mm_P2.00mm"
 			(at 167.64 40.9448 0)
 			(effects
 				(font

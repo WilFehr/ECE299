@@ -1,25 +1,4 @@
-25637836707690780
-2pin_ScrewTerminal
-691137710002
-
-
-0
-2
-2
-5pin_ScrewTerminal
-PHOENIX_1935190
-
-
-0
-5
-5
-7pin_ScrewTerminal
-1727065
-
-
-0
-7
-7
+25595825291543738
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -402,13 +381,6 @@ Battery
 Battery_Panasonic_CR3032-VCN_Vertical_CircularHoles
 Panasonic CR-3032/VCN battery, https://industrial.panasonic.com/cdbs/www-data/pdf2/AAA4000/AAA4000D508.PDF
 battery CR-3032 coin cell vertical
-0
-2
-2
-Battery
-THT Battery Connection
-Resistor, Axial_DIN0204 series, Axial, Vertical, pin pitch=2.54mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
-Resistor Axial_DIN0204 series Axial Vertical pin pitch 2.54mm 0.167W length 3.6mm diameter 1.6mm
 0
 2
 2
@@ -59184,118 +59156,6 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
-ECE
-ARD_UNO
-
-
-0
-32
-32
-ECE
-BNC_BLK_SLD
-
-Mounting Hole
-0
-2
-2
-ECE
-Bourns_PTV09_Horiz
-Pot
-R
-0
-5
-5
-ECE
-CUE_CMA-4544PF-W
-CMA-4544PF-W
-M
-0
-2
-2
-ECE
-CUE_SJ1-352XNG
-8 pins DIL package, elliptical pads
-3.5mm Jack
-0
-5
-5
-ECE
-IND_TDK_SL1923
-0.4" Resistance
-R
-0
-2
-2
-ECE
-LTC-4727JR
-
-
-0
-14
-14
-ECE
-Multicomp_2144
-Multicomp (also SPC) 2144 Power Entry Connector, IEC 320
-
-0
-5
-5
-ECE
-OLED_Display_1.3
-
-
-0
-7
-7
-ECE
-OLED_Display_2.42_copy
-
-
-0
-7
-7
-ECE
-RDA5807M_Module_SM
-
-
-0
-10
-10
-ECE
-RDA5807M_Module_TH
-
-
-0
-10
-10
-ECE
-RPi_Pico_SM
-
-
-0
-43
-43
-ECE
-RPi_Pico_TH
-
-
-0
-40
-40
-ECE
-STM32_F4
-STM32 F4 Discovery Header
-STM32F4 Discovery
-0
-104
-104
-ECE
-Transformer_Block_AVB_03526
-https://www.block.eu/en_EN/productversion/avb-03526/
-Block PCB Transformer
-0
-8
-8
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -68004,13 +67864,6 @@ Yellow 5381 Series LED
 0
 2
 2
-LM386N_4_NOPB
-DIP794W45P254L959H508Q8
-
-
-0
-8
-8
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -102787,24 +102640,3 @@ Varistor VF
 0
 2
 2
-footprints
-SOIC_05WU-7_DIO
-
-AP63205WU-7 
-0
-6
-6
-footprints
-SOIC_05WU-7_DIO-L
-
-AP63205WU-7 
-0
-6
-6
-footprints
-SOIC_05WU-7_DIO-M
-
-AP63205WU-7 
-0
-6
-6

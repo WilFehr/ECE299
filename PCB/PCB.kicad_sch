@@ -7142,7 +7142,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 64.77 0)
+			(at 193.04 65.786 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7611,10 +7611,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "74e35bf9-90c3-4193-b128-1036cc69fdee")
 		(property "Reference" "C1"
-			(at 185.42 60.9599 0)
+			(at 184.404 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7623,7 +7622,7 @@
 			)
 		)
 		(property "Value" "0.047u"
-			(at 185.42 63.4999 0)
+			(at 184.404 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)

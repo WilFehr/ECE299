@@ -8706,7 +8706,7 @@
 				)
 			)
 		)
-		(property "Footprint" "2pin_ScrewTerminal:691137710002"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H7.3mm"
 			(at 148.59 130.81 0)
 			(effects
 				(font

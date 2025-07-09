@@ -490,7 +490,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "manufacturing files/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

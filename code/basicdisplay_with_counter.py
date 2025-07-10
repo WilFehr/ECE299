@@ -39,7 +39,7 @@ oled = SSD1306_SPI( SCREEN_WIDTH, SCREEN_HEIGHT, oled_spi, spi_dc, spi_res, spi_
 # Assign a value to a variable
 Count = 0
 #initialize button
-button = Pin(2, Pin.IN, Pin.PULL_DOWN)      
+button = Pin(1, Pin.IN, Pin.PULL_DOWN)      
 
 def button_handler(pin):
     global Count

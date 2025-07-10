@@ -13,13 +13,11 @@ SCREEN_HEIGHT = 64 #number of rows
 EncoderState = 0
 UpdateDisplay = True
 
-#
+# DoEncoder1
 # Encoder service routine for terminal A and B
-#
-
-def DoEncoder( Encoder, State ):
+def DoEncoder1( Encoder, State ):
     global EncoderState
-    global Count
+    global Count1
     global UpdateDisplay
 
 #
@@ -71,8 +69,8 @@ def DoEncoder( Encoder, State ):
 #
 # The shaft is turing right so increment the count
 #            
-            if ( Count < 99 ):
-                Count = Count + 1
+            if ( Count1 < 99 ):
+                Count1 = Count1 + 1
                 UpdateDisplay = True
 
                
@@ -109,8 +107,8 @@ def DoEncoder( Encoder, State ):
 #
 # The shaft is turing left so decrement the count
 #
-            if ( Count != 0 ):
-                Count = Count - 1
+            if ( Count1 != 0 ):
+                Count1 = Count1 - 1
                 UpdateDisplay = True
 
         EncoderState = 0
@@ -120,40 +118,158 @@ def DoEncoder( Encoder, State ):
             
     return( True )
 
+#end of DoEncoder1
+
+
+#DoEncoder2
+def DoEncoder2( Encoder, State ):
+    global EncoderState
+    global Count2
+    global UpdateDisplay
+
 #
-# Service terminal A interrupt
+# Debug output
+#
+    print( EncoderState, Encoder, State )
+
+    if ( EncoderState == 0 ):
+#
+# Check for input A going low ( encoder turning left )
+#
+        if (( Encoder == 'A' ) and ( State == 4 )):
+            EncoderState = 1
+
+#
+# Check for input B going low ( encoder turning right )
+#
+        if (( Encoder == 'B' ) and ( State == 4 )):
+            EncoderState = 4
+
+#
+# Encoding turing right squence ( A=0 then B=0 then A=1 and finally B=1 )
 #
 
-def EncoderAInterrupt( Pin ):
-    DoEncoder( 'A', Pin.irq().flags())
+    elif( EncoderState == 1 ):
+#        
+# This should be input B going low
+#
+        if (( Encoder == 'B' ) and ( State == 4 )):
+            EncoderState = 2
+        else:
+            EncoderState = 0
+            
+    elif ( EncoderState == 2 ):
+#
+# This should be input A going high
+#        
+        if (( Encoder == 'A' ) and ( State == 8 )):
+            EncoderState = 3
+        else:
+            EncoderState = 0
+            
+    elif ( EncoderState == 3 ):
+#
+# Finally input B should go high
+#
+        if (( Encoder == 'B' ) and ( State == 8 )):
+
+#
+# The shaft is turing right so increment the count
+#            
+            if ( Count2 < 99 ):
+                Count2 = Count2 + 1
+                UpdateDisplay = True
+
+               
+        EncoderState = 0
+
+
+#
+# Encoding turing left squence ( B=0 then A=0 then B=1 and finally A=1 )
+#
+
+    elif ( EncoderState == 4 ):
+#        
+# This should be input A going low
+#        
+        if (( Encoder == 'A' ) and ( State == 4 )):
+            EncoderState = 5
+        else:
+            EncoderState = 0
+            
+    elif ( EncoderState == 5 ):
+#        
+# This should be input B going high
+#        
+        if (( Encoder == 'B' ) and ( State == 8 )):
+            EncoderState = 6
+        else:
+            EncoderState = 0
+                        
+    elif ( EncoderState == 6 ):
+#        
+# This should be input A going high
+#        
+        if (( Encoder == 'A' ) and ( State == 8 )):
+#
+# The shaft is turing left so decrement the count
+#
+            if ( Count2 != 0 ):
+                Count2 = Count2 - 1
+                UpdateDisplay = True
+
+        EncoderState = 0
+
+    else:
+        EncoderState = 0
+            
+    return( True )
+
+#end of DoEncoder2
+
+
+# Service terminal 1A interrupt
+def Encoder1AInterrupt( Pin ):
+    DoEncoder1( 'A', Pin.irq().flags())
     return( True )
 
 #
-# Service terminal B interrupt
+# Service terminal 1B interrupt
+def Encoder1BInterrupt( Pin ):
+    DoEncoder1( 'B', Pin.irq().flags())
+    return( True )
+'''
+'''
 #
-
-def EncoderBInterrupt( Pin ):
-    DoEncoder( 'B', Pin.irq().flags())
+# Service terminal 2A interrupt
+def Encoder2AInterrupt( Pin ):
+    DoEncoder2( 'A', Pin.irq().flags())
     return( True )
 
 #
-# GPIO 4 ( Pin 6 ) is connected to terminal A on the encoder
-#
-EncoderA = Pin( 2, Pin.IN )
+# Service terminal 2B interrupt
+def Encoder2BInterrupt( Pin ):
+    DoEncoder2( 'B', Pin.irq().flags())
+    return( True )
+
+
 
 #
-# GPIO 2 ( Pin 4 ) is connected to terminal B on the encoder
+# initialize encoders
 #
-
-EncoderB = Pin( 0, Pin.IN )
+Encoder1A = Pin( 2, Pin.IN )
+Encoder1B = Pin( 0, Pin.IN )
+Encoder2A = Pin(10, Pin.IN )
+Encoder2B = Pin(12, Pin.IN )
 
 #
 # Enable interrupt detection for both rising and falling edges of both signals
 #
 
-EncoderA.irq( handler= EncoderAInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
-EncoderB.irq( handler= EncoderBInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
-
+Encoder1A.irq( handler= Encoder1AInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
+Encoder1B.irq( handler= Encoder1BInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
+Encoder2A.irq( handler= Encoder2AInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
+Encoder2B.irq( handler= Encoder2BInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
 
 
 
@@ -182,7 +298,8 @@ oled = SSD1306_SPI( SCREEN_WIDTH, SCREEN_HEIGHT, oled_spi, spi_dc, spi_res, spi_
 
 
 # Assign a value to a variable
-Count = 50
+Count1 = 50
+Count2 = 50
 
 while ( True ):
 
@@ -199,7 +316,7 @@ while ( True ):
 #
             oled.text("Welcome to ECE", 0, 0) # Print the text starting from 0th column and 0th row
             oled.text("299", 45, 10) # Print the number 299 starting at 45th column and 10th row
-            oled.text("Count is: %4d" % Count, 0, 30 ) # Print the value stored in the variable Count. 
+            oled.text("Count2 is: %d" % Count2, 0, 30 ) # Print the value stored in the variable Count. 
         
 #
 # Draw box below the text

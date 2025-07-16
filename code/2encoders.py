@@ -316,7 +316,7 @@ while ( True ):
 #
             oled.text("Welcome to ECE", 0, 0) # Print the text starting from 0th column and 0th row
             oled.text("299", 45, 10) # Print the number 299 starting at 45th column and 10th row
-            oled.text("Count2 is: %d" % Count2, 0, 30 ) # Print the value stored in the variable Count. 
+            oled.text("1: %d , 2: %d" % (Count1, Count2), 0, 30 ) # Print the value stored in the variable Count. 
         
 #
 # Draw box below the text

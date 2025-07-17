@@ -175,13 +175,16 @@ def DoEncoder2( Encoder, State ):
 # Finally input B should go high
 #
         if (( Encoder == 'B' ) and ( State == 8 )):
-
+            print("here a")
 #
 # The shaft is turing right so increment the count
 #            
             if ( Freq < 107.8 ):
+                print("here b")
                 Freq = Freq + 0.2
+                print("here c")
                 UpdateDisplay = True
+                print("here d")
 
                
         EncoderState = 0
@@ -212,14 +215,21 @@ def DoEncoder2( Encoder, State ):
     elif ( EncoderState == 6 ):
 #        
 # This should be input A going high
-#        
+        print("here 0")
+        print("freq: ", Freq)
         if (( Encoder == 'A' ) and ( State == 8 )):
 #
 # The shaft is turing left so decrement the count
 #
+            print("here 1")
             if ( Freq > 88.2 ):
+                print("here 2")
+                print("freq: ", Freq)
                 Freq = Freq - 0.2
+                print("here 3")
+                print("freq: ", Freq)
                 UpdateDisplay = True
+                print("here 4")
 
         EncoderState = 0
 
@@ -311,9 +321,12 @@ while ( True ):
 
         if ( UpdateDisplay == True ):
             if ( fm_radio.SetVolume( Vol ) == True ):
-                    fm_radio.ProgramRadio()
+                fm_radio.ProgramRadio()
+            print("here 5")
             if ( fm_radio.SetFrequency( Freq ) == True ):
-                    fm_radio.ProgramRadio()        
+                print("here 6")
+                fm_radio.ProgramRadio()
+                print("here 7")
 
             UpdateDisplay = False
 #

@@ -8,7 +8,7 @@ class Radio:
 # set the initial values of the radio
 #
         self.Volume = 2
-        self.Frequency = 88
+        self.Frequency = 88.0
         self.Mute = False
 #
 # Update the values with the ones passed in the initialization code

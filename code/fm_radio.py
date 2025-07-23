@@ -27,7 +27,7 @@ class Radio:
 #
 # I2C Device ID can be 0 or 1. It must match the wiring. 
 #
-# The radio is connected to device number 1 of the I2C device
+# The radio is connected to device number 0 of the I2C device
 #
         self.i2c_device = 0 
         self.i2c_device_address = 0x10
@@ -114,6 +114,9 @@ class Radio:
 # Configure the settings array with the mute, frequency and volume settings
 #
     def UpdateSettings( self ):
+        
+        self.Settings = bytearray(8)
+
         
         if ( self.Mute ):
             self.Settings[0] = 0x80

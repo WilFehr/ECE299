@@ -1,5 +1,8 @@
-from machine import Pin, SPI # SPI is a class associated with the machine library. 
+from machine import Pin, SPI, I2C # SPI is a class associated with the machine library. 
 from machine import Timer
+import time
+import utime
+import math
 
 import os
 import json
@@ -16,15 +19,15 @@ from renderer import *
 # the minute counter uses tim0, and the alarm uses tim1.
 # The alarm needs to be on a different timer so that it can be cancelled if the user changes the time, changes the alarm time, or turns the alarm off.
 
-minute = 60000
+minute = 6000
 
 state = {'vol':0,
          'freq':1013,
          '24hr':False,
-         'hour':0,
-         'min':0,
-         'alarmHour':0,
-         'alarmMin':0,
+         'hour':14,
+         'min':53,
+         'alarmHour':14,
+         'alarmMin':56,
          'alarm':True,
          'invertScreen':0,
          'updated':True,
@@ -234,9 +237,11 @@ def flash(t):
 tim3.init(freq=2, mode=Timer.PERIODIC, callback=flash)
 
 def alarmSnooze():
-    tim2.deinit()
-    state['invertScreen'] = 0
-    tim1.init(period=420000, mode=Timer.ONE_SHOT, callback=alarmBlaring)
+    if (str(tim2) == "Timer(mode=PERIODIC, tick_hz=1000000, period=500000)"):
+        tim2.deinit()
+        state['invertScreen'] = 0
+        tim1.init(period=420000, mode=Timer.ONE_SHOT, callback=alarmBlaring)
+    return
     
 def alarmBlaring():
     # TODO: make this do something

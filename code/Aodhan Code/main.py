@@ -16,7 +16,7 @@ from renderer import *
 # the minute counter uses tim0, and the alarm uses tim1.
 # The alarm needs to be on a different timer so that it can be cancelled if the user changes the time, changes the alarm time, or turns the alarm off.
 
-minute = 1000
+minute = 60000
 
 state = {'vol':0,
          'freq':1013,

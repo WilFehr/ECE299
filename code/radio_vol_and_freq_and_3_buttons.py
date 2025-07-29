@@ -246,6 +246,34 @@ def Encoder2BInterrupt( Pin ):
     DoEncoder2( 'B', Pin.irq().flags())
     return( True )
 
+#buttons
+def Encoder1sw_handler(pin):
+    global Count
+    if pin.value() == 1:
+        sleep(0.15)
+        Count += 1
+def Encoder2sw_handler(pin):
+    global Count
+    if pin.value() == 1:
+        sleep(0.15)
+        Count += 1
+def Button1_handler(pin):
+    global Count
+    if pin.value() == 1:
+        sleep(0.15)
+        Count += 1
+def Button2_handler(pin):
+    global Count
+    if pin.value() == 1:
+        sleep(0.15)
+        Count += 1
+def ButtonTop_handler(pin):
+    global Count
+    if pin.value() == 1:
+        sleep(0.15)
+        Count += 1
+        
+
 
 
 #
@@ -256,6 +284,14 @@ Encoder1B = Pin( 0, Pin.IN )
 Encoder2A = Pin(10, Pin.IN )
 Encoder2B = Pin(12, Pin.IN )
 
+#buttons
+Encoder1sw = Pin( 1, Pin.IN, Pin.PULL_DOWN )
+Encoder2sw = Pin(11, Pin.IN, Pin.PULL_DOWN )
+Button1 = Pin( 13, Pin.IN, Pin.PULL_DOWN )
+Button2 = Pin( 14, Pin.IN, Pin.PULL_DOWN )
+ButtonTop = Pin(15, Pin.IN, Pin.PULL_DOWN )
+
+
 #
 # Enable interrupt detection for both rising and falling edges of both signals
 #
@@ -264,6 +300,13 @@ Encoder1A.irq( handler= Encoder1AInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RI
 Encoder1B.irq( handler= Encoder1BInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
 Encoder2A.irq( handler= Encoder2AInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
 Encoder2B.irq( handler= Encoder2BInterrupt, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, hard=True )
+
+Encoder1sw.irq( trigger=Pin.IRQ_RISING, handler = Encoder1sw_handler)
+Encoder2sw.irq( trigger=Pin.IRQ_RISING, handler = Encoder2sw_handler )
+Button1.irq( trigger=Pin.IRQ_RISING, handler = Button1_handler )
+Button2.irq( trigger=Pin.IRQ_RISING, handler = Button2_handler)
+ButtonTop.irq( trigger=Pin.IRQ_RISING, handler = ButtonTop_handler)
+
 
 
 # Initialize I/O pins associated with the oled display SPI interface

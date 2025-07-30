@@ -246,6 +246,8 @@ def Encoder2BInterrupt( Pin ):
     DoEncoder2( 'B', Pin.irq().flags())
     return( True )
 
+#placeholder
+Count = 0
 #buttons
 def Encoder1sw_handler(pin):
     global Count
@@ -366,7 +368,8 @@ while ( True ):
 # Update the text on the screen
 #
             oled.text("Vol: %d" %Vol, 0, 0) # Print the text starting from 0th column and 0th row
-            oled.text("Freq: %.1f" %Freq, 0, 10 ) # Print the value stored in the variable Count. 
+            oled.text("Freq: %.1f" %Freq/10.0, 0, 10 ) # Print on next line the frequency
+            oled.text("count: %d" %Count, 0, 20)
         
 #
 # Draw box below the text
